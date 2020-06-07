@@ -1,0 +1,34 @@
+---
+name: name1
+archives:
+- name: archive1
+  args:
+  - _tests/archives/data1
+  - _tests/archives/data2
+  gzip: true
+databases:
+  postgresql:
+  - name: pg1
+    # env:
+    # - PGPASSWORD=
+    args:
+    - --schema-only
+    - postgresql:///testdb
+    gzip: true
+  # mysql:
+  # - name: db2
+  #   env:
+  #   - MYSQL_PWD=
+  #   args:
+  #     - --host=hoster.ru
+  #     - --user=asd
+  #     - asd
+  #   gzip: true
+storages:
+  yandex_disk:
+  - access_token: '****************'
+    keep: 2
+notifiers:
+  telegram:
+  - token: '123:****************'
+    chat_id: "@channel_public_link"
